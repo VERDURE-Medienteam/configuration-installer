@@ -14,13 +14,16 @@ use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    /**
+     * @throws \Exception
+     */
     public static function getUniqueTmpDirectory()
     {
         $attempts = 5;
         $root = sys_get_temp_dir();
 
         do {
-            $unique = $root . DIRECTORY_SEPARATOR . uniqid('composer-test-' . rand(1000, 9000));
+            $unique = $root . DIRECTORY_SEPARATOR . uniqid('composer-test-' . random_int(1000, 9000));
             if (!file_exists($unique) && Silencer::call('mkdir', $unique, 0777)) {
                 return realpath($unique);
             }

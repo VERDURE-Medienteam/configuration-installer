@@ -79,7 +79,7 @@ class GitignoreService
         $duplicates = array_filter($lines);
         // remove comments
         $duplicates = array_filter($duplicates, function ($line) {
-            return strpos($line, '#') !== 0;
+            return !str_starts_with($line, '#');
         });
         // check if duplicates exist
         if (count($duplicates) !== count(array_unique($duplicates))) {

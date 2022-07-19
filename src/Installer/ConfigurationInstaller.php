@@ -24,7 +24,7 @@ use Composer\Util\Filesystem;
 
 class ConfigurationInstaller extends LibraryInstaller
 {
-    private $handler;
+    private array $handler;
     private $cache;
 
     public function __construct(IOInterface $io, Composer $composer, $type = 'project-configuration', Filesystem $filesystem = null, BinaryInstaller $binaryInstaller = null)

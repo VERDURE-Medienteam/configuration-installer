@@ -23,9 +23,9 @@ abstract class AbstractHandler
 
     public function __construct(Composer $composer, IOInterface $io, Filesystem $filesystem)
     {
-        $this->composer = $composer;
-        $this->io = $io;
         $this->filesystem = $filesystem;
+        $this->io = $io;
+        $this->composer = $composer;
         $this->initialize();
     }
 

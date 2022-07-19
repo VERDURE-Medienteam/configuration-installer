@@ -16,8 +16,8 @@ class File
 
     public function __construct(string $source, string $target)
     {
-        $this->source = $source;
         $this->target = $target;
+        $this->source = $source;
     }
 
     public function getSource(): string
