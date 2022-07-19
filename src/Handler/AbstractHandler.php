@@ -17,9 +17,9 @@ use Composer\Util\Filesystem;
 
 abstract class AbstractHandler
 {
-    protected $composer;
-    protected $io;
-    protected $filesystem;
+    protected Composer $composer;
+    protected IOInterface $io;
+    protected Filesystem $filesystem;
 
     public function __construct(Composer $composer, IOInterface $io, Filesystem $filesystem)
     {
